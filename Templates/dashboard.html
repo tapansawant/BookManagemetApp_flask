@@ -1,0 +1,41 @@
+{% extends "Base.html"%} {% block content %}
+<div class="container container">
+  <div class="row">
+    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+      <form action="/dashboard" method="post">
+        <table>
+          <tr>
+            <td>BOOK Name</td>
+            <td><input type="text" name="name" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td>AUTHOR</td>
+            <td><input type="text" name="author" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td>CATEGORY</td>
+            <td><input type="text" name="category" class="form-control" /></td>
+          </tr>
+          <tr>
+            <td>PRICE</td>
+            <td><input type="text" name="price" class="form-control" /></td>
+          </tr>
+          <tr>
+          <tr>
+            <td>PUBLISHER</td>
+            <td><input type="text" name="publisher" class="form-control" /></td>
+          </tr>
+
+          <br />
+          <tr>
+            <td></td>
+            <td>
+              <button class="btn btn-warning" type="submit">ADD BOOK</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

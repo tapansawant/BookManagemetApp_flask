@@ -1,0 +1,54 @@
+{% extends "base_user.html"%}
+{% block content %}
+<body>
+    <div class="container container">
+
+        <div class="row">
+            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <form action="/search" method="post">
+                    <table>
+                        <tr>
+                            <td> BOOK NAME : </td>
+                            <td><input type="text" name="bname" class="form-control" ></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button class = "btn btn-success"> SEARCH </button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    {% if status %}
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">BOOK NAME</th>
+                            <th scope="col">AUTHOR</th>
+                            <th scope="col">CATEGORY</th>
+                            <th scope="col">PRICE</th>
+                            <th scope="col">PUBLISHER</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {% for row in book %}
+                            <tr>
+                                <th scope="row">{{row[0] }}</th>
+                                <td>{{ row[1] }}</td>
+                                <td>{{ row[2] }}</td>
+                                <td>{{ row[3] }}</td>
+                                <td>{{ row[4] }}</td>
+                                <td>{{ row[5] }}</td>
+                            </tr>
+                         {% endfor %}
+                        </tbody>
+                      </table>
+                    {% endif %}
+                </div>
+            </div>
+    </div>
+{% endblock %}
